@@ -1,33 +1,32 @@
 import React from 'react'
+import {pageLinks} from '../data'
+import logo from '../images/logo.svg'
 
 const Navbar = () => {
   return (
-    <div>
-        <nav className="navbar">
+    
+    <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <img src="./images/logo.svg" className="nav-logo" alt="backroads" />
+          <img src={logo} className="nav-logo" alt="backroads" />
           <button type="button" className="nav-toggle" id="nav-toggle">
             <i className="fas fa-bars"></i>
           </button>
         </div>
         {/* <!-- left this comment on purpose --> */}
         <ul className="nav-links" id="nav-links">
-          <li>
-            <a href="#home" className="nav-link"> home </a>
-          </li>
 
-          <li>
-            <a href="#about" className="nav-link"> about </a>
-          </li>
+          {pageLinks.map((link)=>{
+          
+         return(
 
-          <li>
-            <a href="#services" className="nav-link"> services </a>
-          </li>
+         <li key={link.id}>
+            <a href={link.href} className="nav-link">
+               {link.text}  
+            </a>  
+         </li>) 
+          })}
 
-          <li>
-            <a href="#tours" className="nav-link"> tours</a>
-          </li>
         </ul>
 
         <ul className="nav-icons">
@@ -49,7 +48,7 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
-    </div>
+  
   )
 }
 
