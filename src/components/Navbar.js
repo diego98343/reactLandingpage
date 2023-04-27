@@ -14,6 +14,9 @@ const Navbar = () => {
           </button>
         </div>
         {/* <!-- left this comment on purpose --> */}
+
+
+        
         <ul className="nav-links" id="nav-links">
 
           {pageLinks.map((link)=>{
@@ -26,7 +29,6 @@ const Navbar = () => {
             </a>  
          </li>) 
           })}
-
         </ul>
 
         <ul className="nav-icons">
